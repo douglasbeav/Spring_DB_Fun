@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring with DB</title>
+    <!--link to external css file-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<h1>This is the user page</h1>
+<table>
+    <!--the top of the table-->
+    <thead>
+    <!--a table row-->
+    <tr>
+        <!--naming header cells of the table-->
+        <th>ID</th>
+        <th>User Name</th>
+        <th>Favorite Teacher</th>
+    </tr>
+    </thead>
+    <!--for the data of the data-->
+    <tbody>
+    <!--a table row using Thymeleaf loop "each" to fill in the data cells <td/>-->
+    <tr th:each="user : ${users}">
+        <td th:text="${user.usrID}"/>
+        <td th:text="${user.usrName}"/>
+        <td th:text="${user.favTeacher}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

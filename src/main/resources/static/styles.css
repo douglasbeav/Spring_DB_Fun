@@ -1,0 +1,28 @@
+/*style the table*/
+table{
+    margin: auto;
+    border-collapse: collapse;
+    width: 25%;
+}
+
+/*style the table headers -> ID - User Name - Favorite Teacher*/
+th{
+    border: 1px solid whitesmoke;
+    text-align: center;
+    font-family: "Arial Rounded MT Bold";
+    color: aliceblue;
+    background-color: darkblue;
+    padding: 2px;
+}
+
+/*style the data cells of the table*/
+td{
+    border: 1px solid black;
+    text-align: left;
+    padding: 2px;
+}
+
+/*style the table rows -> 1 row white next row lightgrey and so on*/
+tr:nth-child(even){
+    background-color: lightgrey;
+}
