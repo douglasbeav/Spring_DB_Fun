@@ -21,19 +21,19 @@ public class UserService {
     }
 
     public User addUser(User user) {
-        return null;
+        return userRepo.addUser(user);
     }
 
     public User findUserById(int id) {
-        return null;
+        return userRepo.findUserById(id);
     }
 
     public Boolean deleteUser(int id) {
-        return null;
+        return userRepo.deleteUser(id);
     }
 
     public User updateUser(int id, User user) {
-        return null;
+        return userRepo.updateUser(id, user);
     }
 
 }

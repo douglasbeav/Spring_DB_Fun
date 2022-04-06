@@ -26,19 +26,31 @@ public class UserRepo {
         return template.query(sql, rowMapper);
     }
 
+    //add a new user with id(auto-increments) - user name - password - & favorite teacher
     public User addUser(User user) {
+        String sql = "insert into users (usrName, password, favTeacher) values (?, ?, ?)";
+        template.update(sql, user.getUsrName(), user.getPassword(), user.getFavTeacher());
         return null;
     }
 
+    //find and show user information via user's id
     public User findUserById(int id) {
-        return null;
+        String sql = "select usrID, usrName, favTeacher from users where usrID = ?";
+        RowMapper<User> rowMapper = new BeanPropertyRowMapper<>(User.class);
+        User user = template.queryForObject(sql, rowMapper, id);
+        return user;
     }
 
+    //delete a user via user id
     public Boolean deleteUser(int id) {
-        return null;
+        String sql = "delete from users where usrID = ?";
+        return template.update(sql, id) > 0;
     }
 
+    //find and edit a user's information via user's id
     public User updateUser(int id, User user) {
+        String sql = "update users set usrName = ?, favTeacher = ? where usrID = ?";
+        template.update(sql, user.getUsrName(), user.getFavTeacher(), user.getUsrID());
         return null;
     }
 
